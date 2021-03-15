@@ -5,6 +5,10 @@ class Block extends BaseClass {
   }
   display(){
     super.display();
+    var pos =this.body.position;
+     rectMode(CENTER);
+     fill("yellow") ;
+    rect(pos.x, pos.y, this.width, this.height);
   }
 
 };

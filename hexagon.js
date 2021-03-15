@@ -5,7 +5,7 @@ class Hexagon extends BaseClass {
   }
 
   display() {
-  
+    fill("green");
     super.display();
   }
 };

@@ -5,11 +5,14 @@ const Body = Matter.Body;
 const Render = Matter.Render;
 const Constraint=Matter.Constraint;
 
+var block1, block8, block9, block10, block11, block12, block13, block14, block15, block16 ;
+var ground1, slingShot1 ;
+
 function setup() {
   createCanvas(800,400);
   engine = Engine.create();
   world = engine.world;
-  background("grey");
+  
   
   createSprite(400, 200, 50, 50);
   ground1 = new Ground(400,390,800,20);
@@ -24,9 +27,11 @@ function setup() {
   block15 = new Block(420,195,30,40);
 
   block16 = new Block(390,155,30,40);
+  ground2 = new Ground(390,245,300,20);
 
- // block = new Hexagon(200,200);
- // slingShot1 =new SlingShot(block,{x:200,y:180});
+  block1 = new Block(200,200,20,20);
+  slingShot1 = new SlingShot(block1,{x:200 , y:180});
+  block3 = new Hexagon(100,100)
 
 }
 
@@ -35,7 +40,7 @@ function draw() {
   background(255,255,255); 
   Engine.update(engine);
   ground1.display();
-  block.display();
+  block1.display();
    block8.display();
    block9.display();
    block10.display();
@@ -44,14 +49,16 @@ function draw() {
    block13.display();
    block14.display();
    block15.display();
-   slingShot1.display();
+   ground2.display();
+   block3.display();
+  slingShot1.display();
    
   drawSprites();
 } 
 
 function mouseDragged()
 {
-	Matter.Body.setPosition(block.body, {x:mouseX, y:mouseY})
+	Matter.Body.setPosition(block1.body, {x:mouseX, y:mouseY})
   
 }
 
